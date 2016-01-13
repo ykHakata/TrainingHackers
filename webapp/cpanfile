@@ -6,3 +6,4 @@ requires 'HTML::FillInForm::Lite';
 requires 'DBIx::Sunny';
 requires "Starlet";
 requires "Server::Starter";
+requires "Plack::Middleware::ReverseProxy";
