@@ -11,6 +11,9 @@ sub index {
     $self->session->data->{question}->{id} = $question_id;
 
     my $params = $self->parameters;
+
+    return $self->redirect('/questions/'.$question_id) if !$params->{user_answer};
+
     $self->session->data->{answer}->{user_answer} = $params->{user_answer};
 
     my $question = $self->model('Question');
@@ -21,7 +24,7 @@ sub index {
 
     $self->session->data->{question} = $entry;
     my $score = 0;
-    if ($params->{user_answer} == $entry->{answer}) {
+    if ($params->{user_answer} eq $entry->{answer}) {
         $score = +$entry->{score};
     }
 
