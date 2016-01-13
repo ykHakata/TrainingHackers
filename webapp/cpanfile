@@ -3,6 +3,7 @@ requires 'Router::Boom';
 requires 'Text::Xslate';
 requires 'Sub::Data::Recursive';
 requires 'HTML::FillInForm::Lite';
+requires 'DBD::mysql';
 requires 'DBIx::Sunny';
 requires "Starlet";
 requires "Server::Starter";
