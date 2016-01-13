@@ -1,0 +1,20 @@
+
+: block form | fillinform($q) -> {
+
+<form action="/answers/<: $question_id :>"  method="POST">
+  <legend>第<: $question_id :>問</legend>
+  <div><: mark_raw($question) :></div>
+  <fieldset>
+    <div>
+      <div>
+        <input type="text" class="form-control" name="user_answer" value="">
+      </div>
+    </div>
+    <div>
+      <div>
+        <button type="submit" name="send" value="ボタン">送信</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
+: }

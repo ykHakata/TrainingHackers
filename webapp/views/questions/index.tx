@@ -1,0 +1,19 @@
+
+: cascade layout::base
+
+: around body -> {
+以下のユーザーで問題を解くんだな？！<br>
+
+ユーザーID: <: $user.user_id :><br>
+名前:<: $user.username :><br>
+<br>
+問題はこっちだ<br>
+<a href="/questions/1">問題を始める</a><br>
+<br>
+ログアウトはこっちだ<br>
+<a href="/sessions/logout">ログアウト</a><br>
+<br>
+得点確認はこっちだ<br>
+<a href="/scores">得点確認</a><br>
+: }
+

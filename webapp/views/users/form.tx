@@ -1,0 +1,36 @@
+
+: block form | fillinform($q) -> {
+
+<form action="/users"  method="POST">
+  <legend><: $title :></legend>
+: if $error == 1 {
+    <p class="text-warning">そのユーザーは登録済みです。</p>
+: }
+
+  <fieldset>
+    <div>
+      <label for="user_id">ユーザーID</label>
+      <div>
+        <input type="text" class="form-control" name="user_id" value="">
+      </div>
+    </div>
+    <div>
+      <label for="user_id">名前</label>
+      <div>
+        <input type="text" class="form-control" name="username" value="">
+      </div>
+    </div>
+    <div>
+      <label for="password">パスワード</label>
+      <div>
+        <input type="password" class="form-control" name="password" value="">
+      </div>
+    </div>
+    <div>
+      <div>
+        <button type="submit" name="send" value="ボタン">登録</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
+: }

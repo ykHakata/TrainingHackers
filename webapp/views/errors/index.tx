@@ -1,0 +1,12 @@
+: cascade layout::base
+
+: around body -> {
+
+: if $error == 1 {
+おっと会員登録してないみたいだぜ<br>
+<a href="/users">登録する</a><br>
+: } else if $error == 2 { 
+問題が登録されてないみたいだぜ<br>
+: }
+
+: }

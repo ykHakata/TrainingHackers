@@ -1,0 +1,5 @@
+: cascade layout::base
+
+: around body -> {
+: include sessions::form
+: }

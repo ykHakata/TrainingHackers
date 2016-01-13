@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <meta charset="UTF-8">
+  <head>
+    : cascade with layout::head
+    : block head -> {}
+  <title></title>
+  </head>
+<body>
+: block header -> {}
+: block body -> {}
+: block footer -> {}
+</body>
+</html>

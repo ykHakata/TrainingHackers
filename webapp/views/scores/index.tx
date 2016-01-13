@@ -1,0 +1,8 @@
+
+: cascade layout::base
+
+: around body -> {
+<: $user.user_id :>さん
+結果<br>
+<: $score :>点
+: }

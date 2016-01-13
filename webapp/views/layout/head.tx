@@ -1,0 +1,9 @@
+: around head -> {
+  <meta charset="UTF-8">
+: }
+
+: around header -> {
+: }
+
+: around footer -> {
+: }
