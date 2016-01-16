@@ -6,7 +6,6 @@ use lib "$FindBin::Bin/lib";
 use File::Basename;
 use Plack::Builder;
 use TrainingHackers;
-use File::RotateLogs;
 use Log::Dispatch;
 use Log::Dispatch::File;
 use Log::Dispatch::Screen;
