@@ -26,5 +26,8 @@ my $psgi_app = $app->psgi_app;
 
 builder {
     enable 'ReverseProxy';
+    enable 'Static',
+        path => qr{^/(images|js|css|fonts)/},
+        root => './static/';
     $psgi_app;
 };
