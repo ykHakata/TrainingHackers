@@ -11,7 +11,6 @@
             AutoCommit => 1,
             PrintError => 0,
             AutoInactiveDestroy => 1,
-            mysql_auto_reconnect => 1,
         }
     },
 }
