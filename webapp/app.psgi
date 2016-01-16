@@ -48,5 +48,8 @@ builder {
     enable 'ReverseProxy';
     enable 'LogDispatch', logger => $logger;
     enable 'LogErrors';
-    $psgi_app
+    enable 'Static',
+        path => qr{^/(images|js|css|fonts)/},
+        root => './static/';
+    $psgi_app;
 };
