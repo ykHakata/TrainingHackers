@@ -1,0 +1,62 @@
+=encoding utf8
+
+=head1 NAME
+
+    Guides - TrainingHackers guide to the galaxy
+
+    IT スキル向上トレーニングゲーム WEB アプリケーションの案内
+
+=head1 REFERENCE
+
+    This is the class hierarchy of the TrainingHackers distribution.
+
+=head1 DIRECTORY ./
+
+    TrainingHackers
+    |- sql                  # SQLファイルディレクトリ
+    |- webapp               # アプリケーションディレクトリ
+    |- Guides.pod           # 全体の概要
+    +- README.md            # はじめに読むべきファイル
+
+=head2 DIRECTORY ./webapp
+
+    webapp                  # アプリケーションディレクトリ
+    |- config               # 設定ファイルディレクトリ
+    |- lib                  # ライブラリディレクトリ
+    |- local                # モジュールディレクトリ
+    |- static               # 静的なファイルのディレクトリ
+    |- views                # テンプレートディレクトリ
+    |- logs                 # ログファイルディレクトリ
+    |- app.psgi             # 実行ファイル
+    |- cpanfile             # インストールモジュールリスト
+    +- cpanfile.snapshot    # インストールモジュール履歴
+
+=head2 DIRECTORY ./webapp/lib
+
+    lib                     # ライブラリディレクトリ
+    |- Spica                # アプリケーションディレクトリ
+    |- TrainingHackers      # アプリケーションディレクトリ
+    |- Spica.pm             #
+    +- TrainingHackers.pm   #
+
+=head2 DIRECTORY ./webapp/lib/TrainingHackers
+
+    TrainingHackers         # アプリケーションディレクトリ
+    |- Controller           # web コントローラーディレクトリ
+    +- Model                # web モデルロジックディレクトリ
+
+=head2 DIRECTORY ./webapp/lib/TrainingHackers/Controller
+
+    Controller              # web コントローラーディレクトリ
+    |- Answers.pm           #
+    |- Auth.pm              #
+    |- Base.pm              #
+    |- Errors.pm            #
+    |- Index.pm             # トップページ
+    |- Initializers.pm      #
+    |- Questions.pm         # 問題表示、入力
+    |- Scores.pm            #
+    |- Sessions.pm          # ログイン入力確認 (ログアウト)
+    +- Users.pm             # 会員登録
+
+=cut
