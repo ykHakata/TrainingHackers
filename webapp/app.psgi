@@ -6,6 +6,9 @@ use lib "$FindBin::Bin/lib";
 use File::Basename;
 use Plack::Builder;
 use TrainingHackers;
+use Log::Dispatch;
+use Log::Dispatch::File;
+use Log::Dispatch::Screen;
 
 my $root_dir = File::Basename::dirname(__FILE__);
 
@@ -24,8 +27,26 @@ $app->route('/initialize', {controller => 'TrainingHackers::Controller::Initiali
 
 my $psgi_app = $app->psgi_app;
 
+my $logger = Log::Dispatch->new;
+$logger->add( 
+    Log::Dispatch::File->new(
+        name      => 'access_log',
+        min_level => 'debug',
+        filename  => $root_dir.'/logs/access_log'
+    )
+);
+
+$logger->add(
+    Log::Dispatch::Screen->new(
+        name      => 'screen',
+        min_level => 'warning',
+    )
+);
+
 builder {
     enable 'ReverseProxy';
+    enable 'LogDispatch', logger => $logger;
+    enable 'LogErrors';
     enable 'Static',
         path => qr{^/(images|js|css|fonts)/},
         root => './static/';
