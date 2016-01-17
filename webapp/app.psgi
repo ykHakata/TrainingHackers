@@ -48,7 +48,7 @@ builder {
     enable 'LogDispatch', logger => $logger;
     enable 'LogErrors';
     enable 'Static',
-        path => qr{^/(images|js|css|fonts)/},
-        root => './static/';
+      path  => qr{^/static/},
+      root  => './public';
     $psgi_app;
 };
