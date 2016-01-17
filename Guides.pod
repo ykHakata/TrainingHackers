@@ -53,9 +53,9 @@
     |- Base.pm              #
     |- Errors.pm            #
     |- Index.pm             # トップページ
-    |- Initializers.pm      #
+    |- Initializers.pm      # 初期問題データ投入
     |- Questions.pm         # 問題表示、入力
-    |- Scores.pm            #
+    |- Scores.pm            # 解答結果
     |- Sessions.pm          # ログイン入力確認 (ログアウト)
     +- Users.pm             # 会員登録
 
