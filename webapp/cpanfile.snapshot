@@ -81,6 +81,12 @@ DISTRIBUTIONS
       Module::Build 0.38
       URI::Escape 0
       perl 5.008001
+  Crypt-Caesar-0.01
+    pathname: J/JU/JUERD/Crypt-Caesar-0.01.tar.gz
+    provides:
+      Crypt::Caesar 0.01
+    requirements:
+      ExtUtils::MakeMaker 0
   DBD-mysql-4.033
     pathname: C/CA/CAPTTOFU/DBD-mysql-4.033.tar.gz
     provides:

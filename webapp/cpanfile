@@ -10,3 +10,4 @@ requires "Server::Starter";
 requires "Plack::Middleware::ReverseProxy";
 requires "Plack::Middleware::LogErrors";
 requires "Log::Dispatch";
+requires "Crypt::Caesar";
