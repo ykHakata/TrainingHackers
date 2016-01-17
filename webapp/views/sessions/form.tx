@@ -1,8 +1,8 @@
 
 : block form | fillinform($q) -> {
 
-  <div class="container well bs-component">
-    <form action="/sessions" method="POST" class="form-horizontal">
+  <div class="container">
+    <form action="/sessions" method="POST" class="form-horizontal well">
       <fieldset>
         <legend>ログイン</legend>
 
@@ -14,17 +14,19 @@
         <p class="text-warning">ユーザーIDかパスワードが違います</p>
         : }
 
-        <div class="form-group">
+        <div class="form-group has-feedback">
           <label for="user_id" class="col-lg-2 control-label">ユーザーID</label>
           <div class="col-lg-10">
             <input type="text" class="form-control" id="user_id" placeholder="ユーザーID" name="user_id" value="">
+            <span class="glyphicon glyphicon-check form-control-feedback"></span>
           </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group has-feedback">
           <label for="password" class="col-lg-2 control-label">パスワード</label>
           <div class="col-lg-10">
             <input type="password" class="form-control" id="password" placeholder="パスワード" name="password" value="">
+            <span class="glyphicon glyphicon-check form-control-feedback"></span>
           </div>
         </div>
 

@@ -3,7 +3,6 @@
   <head>
     : cascade with layout::head
     : block head -> {}
-  <title>hackers</title>
   </head>
 <body style="padding-bottom:70px;">
 : block header -> {}
