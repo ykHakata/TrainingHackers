@@ -2,18 +2,51 @@
 : cascade layout::base
 
 : around body -> {
-以下のユーザーで問題を解くんだな？！<br>
+  <div class="container">
+    <h2 class="page-header">以下のユーザーで問題を解くんだな？！</h2>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <div class="bs-component">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">ユーザーID</h3>
+            </div>
+            <div class="panel-body">
+              <: $user.user_id :>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <div class="bs-component">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">名前</h3>
+            </div>
+            <div class="panel-body">
+              <: $user.username :>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-ユーザーID: <: $user.user_id :><br>
-名前:<: $user.username :><br>
-<br>
-問題はこっちだ<br>
-<a href="/questions/1">問題を始める</a><br>
-<br>
-ログアウトはこっちだ<br>
-<a href="/sessions/logout">ログアウト</a><br>
-<br>
-得点確認はこっちだ<br>
-<a href="/scores">得点確認</a><br>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <h2 class="page-header">問題はこっちだ</h2>
+        <a href="/questions/1" class="btn btn-default btn-lg btn-block">問題を始める</a>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <h2 class="page-header">ログアウトはこっちだ</h2>
+        <a href="/sessions/logout" class="btn btn-default btn-lg btn-block">ログアウト</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2 class="page-header">得点確認はこっちだ</h2>
+    <a href="/scores" class="btn btn-default btn-lg btn-block">得点確認</a>
+  </div>
 : }
-

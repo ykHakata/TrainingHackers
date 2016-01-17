@@ -17,13 +17,16 @@
 : if $user.user_id {
   <!-- ログイン後の画面選択 -->
   <div class="container">
-    <h2 class="page-header">問題はこっちだ</h2>
-    <a href="/questions" class="btn btn-default btn-lg btn-block">問題をとく</a>
-  </div>
-
-  <div class="container">
-    <h2 class="page-header">ログアウトはこっちだ</h2>
-    <a href="/sessions/logout" class="btn btn-default btn-lg btn-block">ログアウトする</a>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <h2 class="page-header">問題はこっちだ</h2>
+        <a href="/questions" class="btn btn-default btn-lg btn-block">問題をとく</a>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <h2 class="page-header">ログアウトはこっちだ</h2>
+        <a href="/sessions/logout" class="btn btn-default btn-lg btn-block">ログアウトする</a>
+      </div>
+    </div>
   </div>
 : } else {
   <!-- 会員登録入力 -->

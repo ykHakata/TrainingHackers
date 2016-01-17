@@ -1,4 +1,3 @@
-
 : block form | fillinform($q) -> {
   <div class="container">
     <form action="/users" method="POST" class="form-horizontal well">
