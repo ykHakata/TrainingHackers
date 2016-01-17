@@ -2,7 +2,20 @@
 : cascade layout::base
 
 : around body -> {
-<: $user.user_id :>さん
-結果<br>
-<: $score :>点
+  <div class="container">
+    <div class="jumbotron">
+    <h2>解答結果 [ <: $user.user_id :> さん ]</h2>
+      <div class="panel panel-danger">
+        <div class="panel-heading">
+          <h3 class="panel-title">現在の得点</h3>
+        </div>
+        <div class="panel-body">
+          <div class="progress progress-striped active">
+            <div class="progress-bar" style="width: <: $score :>%"></div>
+          </div>
+          <: $score :>点
+        </div>
+      </div>
+    </div>
+  </div>
 : }
