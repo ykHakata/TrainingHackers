@@ -10,6 +10,10 @@ sub index {
     my $question_id = $capture->{'*'};
     $self->session->data->{question}->{id} = $question_id;
 
+    if ($self->method eq 'GET') {
+        return $self->redirect('/questions/'.$question_id);
+    }
+
     my $params = $self->parameters;
 
     return $self->redirect('/questions/'.$question_id) if !$params->{user_answer};
@@ -53,9 +57,9 @@ sub index {
         });
     }
     my $n = $self->session->data->{question}->{id};
-    $n++;
     my $count = $self->model('Question')->count;
-    return $n > $count ? $self->redirect('/scores') : $self->redirect("/questions/$n");
+    $self->stash(user_answer => $params->{user_answer});
+    return $self->render("answers/$n.tx");
 }
 
 1;

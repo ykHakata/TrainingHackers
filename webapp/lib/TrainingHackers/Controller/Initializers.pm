@@ -9,7 +9,7 @@ sub index {
  
     my $data = [
         {
-            question => '以下の暗号を解読せよ<br>Vwdb Kxqjub',
+            question => '',
             answer => 'Stay Hungry',
             score => 10,
             level => 1,
@@ -20,11 +20,22 @@ sub index {
             hint5 => 'aならd、bならe、cならfに変換してみよう',
         }, 
         {
-            question => 'パスワードを突破せよ',
-            answer => '2',
-            score => 50,
+            question => '',
+            answer => 'hacker',
+            score => 10,
             level => 1,
-            hint1 => '',
+            hint1 => 'ヒントは身近なところにあるぞ',
+            hint2 => '',
+            hint3 => '',
+            hint4 => '',
+            hint5 => '',
+        },
+        {
+            question => '',
+            answer => '1',
+            score => 10,
+            level => 1,
+            hint1 => 'ヒントは身近なところにあるぞ',
             hint2 => '',
             hint3 => '',
             hint4 => '',

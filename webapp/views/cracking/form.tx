@@ -1,0 +1,38 @@
+
+: block form | fillinform($q) -> {
+
+<form action="/cracking"  method="POST">
+  <legend>パスワードクラッキングせよ!</legend>
+  <fieldset>
+    : if $error == 1 {
+    <p class="text-warning">IDが入力されていません</p>
+    : }
+    : if $error == 2 {
+    <p class="text-warning">パスワードが入力されていません</p>
+    : }
+    : if $error == 3 {
+    <p class="text-warning">IDかパスワードが違います</p>
+    : }
+    : if $success {
+    <p class="text-warning">やるじゃんクラック成功！！
+           第2問のページ戻って、以下のパスワードをテキストボックスへ入力して下さい</p>
+    <p class="text-warning">パスワード : <: $password :></p>
+    : }
+    <div>
+      <div>
+        <input type="text" class="form-control" name="id" value="">
+      </div>
+    </div>
+    <div>
+      <div>
+        <input type="password" class="form-control" name="password" value="">
+      </div>
+    </div>
+    <div>
+      <div>
+        <button type="submit" name="send" value="ボタン">送信</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
+: }

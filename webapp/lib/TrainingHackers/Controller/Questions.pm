@@ -23,7 +23,7 @@ sub show {
     my $question = $self->model('Question')->search($n);
     if (!$question) {
         $self->session->data->{error} = 2;
-        return $self->redirect('/errors');
+        return $self->redirect('/scores');
     }
     $self->stash(
         q => {question_id => $n},
@@ -37,8 +37,11 @@ sub show {
         hint4 => $question->{hint4},
         hint5 => $question->{hint5},
     );
+    if ($self->session->data->{cracking_password} && $n == 2) {
+        $self->stash(q => {user_answer => $self->session->data->{cracking_password}}); 
+    }
     $self->session->data->{question} = $question;
-    $self->render("questions/question.tx");
+    $self->render("questions/$n.tx");
 }
 
 1;

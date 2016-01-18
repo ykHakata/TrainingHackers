@@ -24,6 +24,7 @@ $app->route('/answers/*', {controller => 'TrainingHackers::Controller::Answers',
 $app->route('/scores', {controller => 'TrainingHackers::Controller::Scores', action => 'index'});
 $app->route('/errors', {controller => 'TrainingHackers::Controller::Errors', action => 'index'});
 $app->route('/initialize', {controller => 'TrainingHackers::Controller::Initializers', action => 'index'});
+$app->route('/cracking', {controller => 'TrainingHackers::Controller::PasswordCracking', action => 'index'});
 
 my $psgi_app = $app->psgi_app;
 

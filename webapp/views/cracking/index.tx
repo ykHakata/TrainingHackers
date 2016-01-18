@@ -1,0 +1,8 @@
+: cascade layout::base
+
+: around body -> {
+: include cracking::form
+
+<br>
+<a href="/questions/2" class="btn btn-default btn-lg btn-block">第2問へ戻る</a>
+: }

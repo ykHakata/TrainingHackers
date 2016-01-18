@@ -2,8 +2,6 @@
 : block form | fillinform($q) -> {
 
 <form action="/answers/<: $question_id :>"  method="POST">
-  <legend>第<: $question_id :>問</legend>
-  <div><: mark_raw($question) :></div>
   <fieldset>
     <div>
       <div>

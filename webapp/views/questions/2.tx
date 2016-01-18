@@ -1,0 +1,21 @@
+
+: cascade layout::base
+
+: around body -> {
+
+<h1>第<: $question_id :>問</h1>
+
+<h2>以下のURLにあるフォームのIDとパスワードを突破せよ</h2>
+<h3><a href="/cracking" class="btn btn-default btn-lg btn-block">クラッキング用ページへ</a></h3>
+<br>
+: include questions::form
+
+得点:<: $score :><br>
+難易度:<: $level :><br>
+ヒント1:<: $hint1 :><br>
+ヒント2:<: $hint2 :><br>
+ヒント3:<: $hint3 :><br>
+ヒント4:<: $hint4 :><br>
+ヒント5:<: $hint5 :><br>
+
+: }
