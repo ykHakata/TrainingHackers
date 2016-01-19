@@ -32,6 +32,24 @@ has session => (
     }
 );
 
+has db => (
+    is => 'rw',
+    lazy => 1,
+    default => sub {
+        my $self = shift;
+        my %db = %{$self->config->{connect_info}};
+
+        my $db = DBIx::Sunny->connect(
+            "dbi:mysql:database=$db{database};host=$db{host};port=$db{port}", $db{username}, $db{password}, {
+                RaiseError => 1,
+                PrintError => 0,
+                AutoInactiveDestroy => 1,
+                mysql_enable_utf8   => 1,
+            },
+        );
+    }
+);
+
 sub authenticate {
     my $self = shift;
 
@@ -62,22 +80,6 @@ sub model {
     my $model = $pkg->new(db => $self->db);
     $cache->{$name} = $model;
     $model;
-}
-
-sub db {
-    my $self = shift;
-
-    my %db = %{$self->config->{connect_info}};
-
-    my $db = DBIx::Sunny->connect(
-        "dbi:mysql:database=$db{database};host=$db{host};port=$db{port}", $db{username}, $db{password}, {
-            RaiseError => 1,
-            PrintError => 0,
-            AutoInactiveDestroy => 1,
-            mysql_enable_utf8   => 1,
-            mysql_auto_reconnect => 1,
-        },
-    );
 }
 
 1;
