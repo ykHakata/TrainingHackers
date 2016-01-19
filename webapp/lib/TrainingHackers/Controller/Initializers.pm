@@ -6,10 +6,10 @@ use utf8;
 
 sub index {
     my $self = shift;
- 
+
     my $data = [
         {
-            question => '',
+            question => '以下の暗号を解読せよ<br>Vwdb Kxqjub',
             answer => 'Stay Hungry',
             score => 10,
             level => 1,
@@ -18,9 +18,9 @@ sub index {
             hint3 => 'シーザー暗号はアルファベットを特定の文字数ずらすんだ',
             hint4 => '問題の暗号文をアルファベット順に後ろに3文字ずらしてみよう',
             hint5 => 'aならd、bならe、cならfに変換してみよう',
-        }, 
+        },
         {
-            question => '',
+            question => '以下のURLにあるフォームのIDとパスワードを突破せよ',
             answer => 'hacker',
             score => 10,
             level => 1,
@@ -31,7 +31,7 @@ sub index {
             hint5 => '',
         },
         {
-            question => '',
+            question => 'リスティング型パスワード突破',
             answer => '1',
             score => 10,
             level => 1,

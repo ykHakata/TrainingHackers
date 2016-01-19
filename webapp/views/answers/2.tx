@@ -2,12 +2,5 @@
 : cascade layout::base
 
 : around body -> {
-第2問目の解答を送信したぞ<br>
-<br>
-
-おまえの解答だ！<br>
-解答 : <: $user_answer:><br>
-<br>
-次の問題はこっちだ<br>
-<a href="/questions/3" class="btn btn-default btn-lg btn-block">第3問へ</a>
+  : include inc::answers::answer
 : }

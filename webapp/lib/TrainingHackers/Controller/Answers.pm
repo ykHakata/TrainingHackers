@@ -58,7 +58,11 @@ sub index {
     }
     my $n = $self->session->data->{question}->{id};
     my $count = $self->model('Question')->count;
-    $self->stash(user_answer => $params->{user_answer});
+    $self->stash(
+        user_answer   => $params->{user_answer},
+        q_number      => $n,
+        next_q_number => $n + 1,
+    );
     return $self->render("answers/$n.tx");
 }
 

@@ -1,0 +1,46 @@
+  <div class="container">
+    <ul class="nav nav-tabs">
+      <li class=""><a href="#hint-1" data-toggle="tab" aria-expanded="false">ヒント１</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+      <div class="tab-pane fade" id="hint-1">
+        <p><br><: $hint1 :></p>
+      </div>
+    </div>
+
+    <ul class="nav nav-tabs">
+      <li class=""><a href="#hint-2" data-toggle="tab" aria-expanded="false">ヒント２</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+      <div class="tab-pane fade" id="hint-2">
+        <p><br><: $hint2 :></p>
+      </div>
+    </div>
+
+    <ul class="nav nav-tabs">
+      <li class=""><a href="#hint-3" data-toggle="tab" aria-expanded="false">ヒント３</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+      <div class="tab-pane fade" id="hint-3">
+        <p><br><: $hint3 :></p>
+      </div>
+    </div>
+
+    <ul class="nav nav-tabs">
+      <li class=""><a href="#hint-4" data-toggle="tab" aria-expanded="false">ヒント４</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+      <div class="tab-pane fade" id="hint-4">
+        <p><br><: $hint4 :></p>
+      </div>
+    </div>
+
+    <ul class="nav nav-tabs">
+      <li class=""><a href="#hint-5" data-toggle="tab" aria-expanded="false">ヒント５</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+      <div class="tab-pane fade" id="hint-5">
+        <p><br><: $hint5 :></p>
+      </div>
+    </div>
+  </div>

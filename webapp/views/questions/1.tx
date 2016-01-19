@@ -2,20 +2,8 @@
 : cascade layout::base
 
 : around body -> {
-
-<h1>第<: $question_id :>問</h1>
-
-<h2>以下の暗号を解読せよ</h2>
-<h3>Vwdb Kxqjub</h3>
-
-: include questions::form
-
-得点:<: $score :><br>
-難易度:<: $level :><br>
-ヒント1:<: $hint1 :><br>
-ヒント2:<: $hint2 :><br>
-ヒント3:<: $hint3 :><br>
-ヒント4:<: $hint4 :><br>
-ヒント5:<: $hint5 :><br>
-
+  : include inc::questions::issue
+  : include inc::questions::form
+  : include inc::questions::level
+  : include inc::questions::hint
 : }
