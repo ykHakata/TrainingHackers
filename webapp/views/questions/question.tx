@@ -4,13 +4,79 @@
 : around body -> {
 
 : include questions::form
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <div class="bs-component">
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              <h3 class="panel-title">得点:</h3>
+            </div>
+            <div class="panel-body">
+              <: $score :>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <div class="bs-component">
+          <div class="panel panel-warning">
+            <div class="panel-heading">
+              <h3 class="panel-title">難易度:</h3>
+            </div>
+            <div class="panel-body">
+              <: $level :>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-得点:<: $score :><br>
-難易度:<: $level :><br>
-ヒント1:<: $hint1 :><br>
-ヒント2:<: $hint2 :><br>
-ヒント3:<: $hint3 :><br>
-ヒント4:<: $hint4 :><br>
-ヒント5:<: $hint5 :><br>
+  <div class="container">
+    <ul class="nav nav-tabs">
+      <li class=""><a href="#hint-1" data-toggle="tab" aria-expanded="false">ヒント１</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+      <div class="tab-pane fade" id="hint-1">
+        <p><br><: $hint1 :></p>
+      </div>
+    </div>
 
+    <ul class="nav nav-tabs">
+      <li class=""><a href="#hint-2" data-toggle="tab" aria-expanded="false">ヒント２</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+      <div class="tab-pane fade" id="hint-2">
+        <p><br><: $hint2 :></p>
+      </div>
+    </div>
+
+    <ul class="nav nav-tabs">
+      <li class=""><a href="#hint-3" data-toggle="tab" aria-expanded="false">ヒント３</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+      <div class="tab-pane fade" id="hint-3">
+        <p><br><: $hint3 :></p>
+      </div>
+    </div>
+
+    <ul class="nav nav-tabs">
+      <li class=""><a href="#hint-4" data-toggle="tab" aria-expanded="false">ヒント４</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+      <div class="tab-pane fade" id="hint-4">
+        <p><br><: $hint4 :></p>
+      </div>
+    </div>
+
+    <ul class="nav nav-tabs">
+      <li class=""><a href="#hint-5" data-toggle="tab" aria-expanded="false">ヒント５</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+      <div class="tab-pane fade" id="hint-5">
+        <p><br><: $hint5 :></p>
+      </div>
+    </div>
+  </div>
 : }
