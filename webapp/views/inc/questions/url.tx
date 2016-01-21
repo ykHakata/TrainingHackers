@@ -1,0 +1,7 @@
+  <div class="container">
+    <div class="form-horizontal well">
+      <fieldset>
+        <a href="/cracking" class="btn btn-primary btn-lg btn-block">クラッキング用ページへ</a>
+      </fieldset>
+    </div>
+  </div>
