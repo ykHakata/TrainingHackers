@@ -20,7 +20,7 @@ sub index {
             hint5 => 'aならd、bならe、cならfに変換してみよう',
         },
         {
-            question => '以下のURLにあるフォームのIDとパスワードを突破せよ',
+            question => 'クラッキング用ページにあるフォームのIDとパスワードを突破せよ',
             answer => 'hacker',
             score => 10,
             level => 1,
