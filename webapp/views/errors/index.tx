@@ -1,12 +1,21 @@
 : cascade layout::base
 
 : around body -> {
-
-: if $error == 1 {
-おっと会員登録してないみたいだぜ<br>
-<a href="/users">登録する</a><br>
-: } else if $error == 2 { 
-問題が登録されてないみたいだぜ<br>
-: }
-
+  <div class="container">
+    <div class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><span class="glyphicon glyphicon-alert"></span>&emsp;エラー！</h3>
+      </div>
+      <div class="panel-body">
+      : if $error == 1 {
+        おっと会員登録してないみたいだぜ
+      : } else if $error == 2 {
+        問題が登録されてないみたいだぜ
+      : }
+      </div>
+    </div>
+    : if $error == 1 {
+    <a href="/users" class="btn btn-default btn-lg btn-block">登録する</a>
+    : }
+  </div>
 : }
