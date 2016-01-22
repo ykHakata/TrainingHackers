@@ -5,6 +5,8 @@
         <a href="/cracking" class="btn btn-primary btn-lg btn-block">クラッキング用ページへ</a>
         : } else if $question_id == 3 {
         <a href="/cracking_from_list" class="btn btn-primary btn-lg btn-block">クラッキング用ページへ</a>
+        : } else if $question_id == 4 {
+        <a href="/exploits" class="btn btn-primary btn-lg btn-block">改ざん用ページへ</a>
         : }
       </fieldset>
     </div>

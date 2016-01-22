@@ -41,6 +41,17 @@ sub index {
             hint4 => '',
             hint5 => '',
         },
+        {
+            question => '改ざん用ページのサイトを改ざんせよ。解答には改ざんに使用したプログラムや文字列を入力せよ。',
+            answer => 'a',
+            score => 10,
+            level => 1,
+            hint1 => 'ヒントは身近なところにあるぞ',
+            hint2 => '',
+            hint3 => '',
+            hint4 => '',
+            hint5 => '',
+        },
     ];
     my $q = $self->model('Question');
     $q->db->query('truncate questions');

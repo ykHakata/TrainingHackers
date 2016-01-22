@@ -23,7 +23,7 @@ sub index {
     }
     if ($params->{id} eq $self->routes->{id} && $params->{password} eq $self->routes->{password}) {
         $self->stash(success => 1, password => $params->{password});
-        $self->session->data->{cracking_password} = $params->{password};
+        $self->session->data->{user_answer} = $params->{password};
         return $self->render('cracking/index.tx');
     } else {
         $self->stash(error => 3);
