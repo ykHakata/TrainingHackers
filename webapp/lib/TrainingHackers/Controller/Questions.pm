@@ -37,8 +37,9 @@ sub show {
         hint4 => $question->{hint4},
         hint5 => $question->{hint5},
     );
-    if ($self->session->data->{cracking_password} && $n == 2) {
+    if ($self->session->data->{cracking_password}) {
         $self->stash(q => {user_answer => $self->session->data->{cracking_password}}); 
+        $self->session->data->{cracking_password} = undef; 
     }
     $self->session->data->{question} = $question;
     $self->render("questions/$n.tx");

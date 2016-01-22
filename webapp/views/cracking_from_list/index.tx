@@ -1,7 +1,7 @@
 : cascade layout::base
 
 : around body -> {
-: include cracking::form
+: include cracking_from_list::form
 <div class="container">
   <a href="/questions/<: $question_id :>" class="btn btn-default btn-lg btn-block">第<: $question_id :>問へ戻る</a>
 </div>

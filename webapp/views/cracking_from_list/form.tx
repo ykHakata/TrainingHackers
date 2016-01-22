@@ -1,0 +1,44 @@
+
+: block form | fillinform($q) -> {
+<div class="container">
+  <form action="/cracking_from_list" method="POST" class="form-horizontal well">
+    <fieldset>
+      <legend><span class="glyphicon glyphicon-pencil"></span>&emsp;パスワードクラッキングせよ</legend>
+      <p class="text-warning">
+      : if $error == 1 {
+      IDが入力されていません
+      : }
+      : if $error == 2 {
+      パスワードが入力されていません
+      : }
+      : if $error == 3 {
+      IDかパスワードが違います
+      : }
+      : if $success {
+      やるじゃんクラック成功！！<br>
+      第2問のページ戻って、以下のパスワードをテキストボックスへ入力して下さい<br>
+      <br>
+      パスワード : <: $password :>
+      : }
+      </p>
+      <div class="form-group has-feedback">
+        <label for="id" class="col-lg-2 control-label"><span class="glyphicon glyphicon-pencil"></span>&emsp;IDを入力</label>
+        <div class="col-lg-10">
+          <input type="text" class="form-control" id="id" placeholder="IDを入力" name="id" value="">
+          <span class="glyphicon glyphicon-check form-control-feedback"></span>
+        </div>
+        <label for="password" class="col-lg-2 control-label"><span class="glyphicon glyphicon-pencil"></span>&emsp;パスワードを入力</label>
+        <div class="col-lg-10">
+          <input type="password" class="form-control" id="password" placeholder="パスワードを入力" name="password" value="">
+          <span class="glyphicon glyphicon-check form-control-feedback"></span>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-lg-10 col-lg-offset-2">
+          <button type="submit" class="btn btn-primary" name="send" value="ボタン">送信</button>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>
+: }

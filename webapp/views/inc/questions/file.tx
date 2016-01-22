@@ -1,0 +1,7 @@
+  <div class="container">
+    <div class="form-horizontal well">
+      <fieldset>
+        <a href="/static/text/password.txt" class="btn btn-primary btn-lg btn-block">パスワードのリストをダウンロード(右クリックで保存)</a>
+      </fieldset>
+    </div>
+  </div>

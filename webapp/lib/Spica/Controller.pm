@@ -88,6 +88,10 @@ has parameters => (
     }
 );
 
+has routes => (
+    is => 'rw',
+);
+
 sub param {
     my $self = shift;
     my $val = $self->req->param(@_);
