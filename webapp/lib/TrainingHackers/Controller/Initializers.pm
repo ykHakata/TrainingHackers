@@ -52,6 +52,17 @@ sub index {
             hint4 => '',
             hint5 => '',
         },
+        {
+            question => '写真が撮られた場所を特定せよ。回答には住所を入力せよ。',
+            answer => '',
+            score => 10,
+            level => 1,
+            hint1 => 'ヒントは身近なところにあるぞ',
+            hint2 => '',
+            hint3 => '',
+            hint4 => '',
+            hint5 => '',
+        },
     ];
     my $q = $self->model('Question');
     $q->db->query('truncate questions');
