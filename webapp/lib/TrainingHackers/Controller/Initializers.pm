@@ -63,6 +63,17 @@ sub index {
             hint4 => '',
             hint5 => '',
         },
+        {
+            question => '以下の実行ファイルを起動してパスワードをクラックせよ',
+            answer => 'hacker',
+            score => 10,
+            level => 1,
+            hint1 => 'ヒントは身近なところにあるぞ',
+            hint2 => '',
+            hint3 => '',
+            hint4 => '',
+            hint5 => '',
+        },
     ];
     my $q = $self->model('Question');
     $q->db->query('truncate questions');
