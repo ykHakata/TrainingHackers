@@ -27,6 +27,17 @@
         <a href="/sessions/logout" class="btn btn-default btn-lg btn-block">ログアウトする</a>
       </div>
     </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <h2 class="page-header">問題一覧</h2>
+        <a href="/questions/1" class="btn btn-default btn-lg btn-block">問1問</a>
+        <a href="/questions/2" class="btn btn-default btn-lg btn-block">問2問</a>
+        <a href="/questions/3" class="btn btn-default btn-lg btn-block">問3問</a>
+        <a href="/questions/4" class="btn btn-default btn-lg btn-block">問4問</a>
+        <a href="/questions/5" class="btn btn-default btn-lg btn-block">問5問</a>
+        <a href="/questions/6" class="btn btn-default btn-lg btn-block">問6問</a>
+      </div>
+    </div>
   </div>
 : } else {
   <!-- 会員登録入力 -->
