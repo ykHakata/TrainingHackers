@@ -45,4 +45,10 @@ sub search {
     $self->db->select_row('SELECT * FROM users WHERE id = ?', $id);
 }
 
+sub search_all {
+    my $self = shift;
+
+    $self->db->select_all('SELECT * FROM users');
+}
+
 1;
