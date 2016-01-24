@@ -3,7 +3,7 @@ use Plack::Request;
 use Spica::Response;
 use Encode ();
 use Module::Load;
-use Sub::Data::Recursive;
+use Spica::Object::Apply;
 use Text::Xslate;
 use Mouse;
 use Carp ();
@@ -83,8 +83,8 @@ has parameters => (
     default => sub {
         my $self = shift;
         my $parameters = $self->req->parameters;
-        Sub::Data::Recursive->invoke(sub { Encode::decode($self->encoding, shift); }, $parameters);
-        $parameters;
+        my $upgrader = Spica::Object::Apply->new(apply_blessed => 1)->apply(sub { Encode::decode($self->encoding, shift); });
+        $upgrader->($parameters);
     }
 );
 
@@ -95,8 +95,8 @@ has routes => (
 sub param {
     my $self = shift;
     my $val = $self->req->param(@_);
-    Sub::Data::Recursive->invoke(sub { Encode::decode($self->encoding, shift); }, $val);
-    $val;
+    my $upgrader = Spica::Object::Apply->new(apply_blessed => 1)->apply(sub { Encode::decode($self->encoding, shift); });
+    $upgrader->($val);
 }
 
 sub redirect {

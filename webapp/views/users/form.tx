@@ -1,10 +1,15 @@
+
 : block form | fillinform($q) -> {
+
   <div class="container">
     <form action="/users" method="POST" class="form-horizontal well">
       <fieldset>
         <legend><: $title :></legend>
-
         : if $error == 1 {
+        <p class="text-warning">値が入力されていません。</p>
+        : }
+
+        : if $error == 2 {
         <p class="text-warning">そのユーザーは登録済みです。</p>
         : }
 

@@ -27,6 +27,7 @@ sub show {
     }
     $self->stash(
         q => {question_id => $n},
+        error => $self->session->data->{error},
         question_id => $n,
         question => $question->{question},
         level => $question->{level},
@@ -37,6 +38,8 @@ sub show {
         hint4 => $question->{hint4},
         hint5 => $question->{hint5},
     );
+    $self->session->data->{error} = 0;
+
     if ($self->session->data->{user_answer}) {
         $self->stash(q => {user_answer => $self->session->data->{user_answer}}); 
         $self->session->data->{user_answer} = undef; 

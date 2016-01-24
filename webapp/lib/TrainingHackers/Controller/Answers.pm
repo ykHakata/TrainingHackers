@@ -2,6 +2,7 @@ package TrainingHackers::Controller::Answers;
 use strict;
 use warnings;
 use parent qw(TrainingHackers::Controller::Auth);
+use TrainingHackers::Validator::Answer;
 
 sub index {
     my $self = shift;
@@ -16,7 +17,11 @@ sub index {
 
     my $params = $self->parameters;
 
-    return $self->redirect('/questions/'.$question_id) if !$params->{user_answer};
+    my $v = TrainingHackers::Validator::Answer->new;
+    if ($v->failed($params)) {
+        $self->session->data->{error} = 1;
+        return $self->redirect('/questions/'.$question_id);
+    }
 
     $self->session->data->{answer}->{user_answer} = $params->{user_answer};
 

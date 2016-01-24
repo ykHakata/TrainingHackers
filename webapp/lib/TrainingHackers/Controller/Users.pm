@@ -2,6 +2,7 @@ package TrainingHackers::Controller::Users;
 use strict;
 use warnings;
 use parent qw(TrainingHackers::Controller::Base);
+use TrainingHackers::Validator::User;
 
 sub index {
     my $self = shift;
@@ -12,12 +13,17 @@ sub index {
         $self->stash(q => $self->session->data->{user}||{}, error => $e);
         return $self->render('users/index.tx');
     } elsif ($self->method eq 'POST') {
-        my $params = $self->parameters;
+        my $params = $self->parameters->as_hashref;
         $self->stash(q => $params);
+        my $v = TrainingHackers::Validator::User->new;
+        if ($v->failed($params)) {
+            $self->stash(error => 1);
+            return $self->render('users/index.tx');
+        }
         if ($self->register($params)) {
             return $self->redirect('/');
         }
-        $self->stash(error => 1);
+        $self->stash(error => 2);
         return $self->render('users/index.tx')
     }
 }

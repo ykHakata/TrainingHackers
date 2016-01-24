@@ -4,6 +4,9 @@
     <form action="/answers/<: $question_id :>"  method="POST" class="form-horizontal well">
       <fieldset>
         <legend><span class="glyphicon glyphicon-pencil"></span>&emsp;解答を入力</legend>
+        :if $error == 1 {
+        <p class="text-warning">解答が入力されていません。</p>
+        : }
         <div class="form-group has-feedback">
           <label for="user_answer" class="col-lg-2 control-label"><span class="glyphicon glyphicon-pencil"></span></label>
           <div class="col-lg-10">
