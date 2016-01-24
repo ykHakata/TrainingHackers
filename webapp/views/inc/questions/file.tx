@@ -4,7 +4,7 @@
         : if $question_id == 3 {
         <a href="/static/text/password.txt" class="btn btn-primary btn-lg btn-block">パスワードのリストをダウンロード(右クリックで保存)</a>
         : } else if $question_id == 5 {
-        <a href="/static/images/picture.jpg" class="btn btn-primary btn-lg btn-block">画像をダウンロード(右クリックで保存)</a>
+        <img src="/static/images/picture.jpeg" class="btn btn-primary btn-lg btn-block" style="transform: scale(0.7, 0.7) rotate(90deg);">
         : } else if $question_id == 6 {
         <a href="/static/bin/WindowsFormsApplication.exe" class="btn btn-primary btn-lg btn-block">実行ファイルをダウンロード(右クリックで保存)</a>
         : }
