@@ -36,26 +36,27 @@ sub index {
         user_id => $self->session->data->{user}->{id},
         question_id => $self->session->data->{question}->{id}
     });
-    if ($answer) {
-        if ($score > 0) {
-            for (1..5) {
-                $score -= 1 if $answer->{"hint$_"};
-            }
-        }
-        $self->model('Answer')->update({
-            user_id => $self->session->data->{user}->{id},
-            user_answer => $params->{user_answer},
-            question_id => $self->session->data->{question}->{id},
-            score => $score
-        });
-    } else {
-        $self->model('Answer')->create({
-            user_id => $self->session->data->{user}->{id},
-            user_answer => $params->{user_answer},
-            question_id => $self->session->data->{question}->{id},
-            score => $score
-        });
+
+    # hint パラメーターから得点を計算後レコード更新するので
+    # answer テーブルの hint カラムは使用していない
+    if ($score) {
+        $score = $self->_calcu_score( $score, $params, );
     }
+
+    my $update_params = +{
+        user_id     => $self->session->data->{user}->{id},
+        user_answer => $params->{user_answer},
+        question_id => $self->session->data->{question}->{id},
+        score       => $score,
+    };
+
+    if ($answer) {
+        $self->model('Answer')->update($update_params);
+    }
+    else {
+        $self->model('Answer')->create($update_params);
+    }
+
     my $n = $self->session->data->{question}->{id};
     my $count = $self->model('Question')->count;
     $self->stash(
@@ -64,6 +65,24 @@ sub index {
         next_q_number => $n + 1,
     );
     return $self->render("answers/$n.tx");
+}
+
+=head2 _calcu_score
+
+    ヒントの回覧状況から得点を計算
+
+=cut
+
+sub _calcu_score {
+    my $self   = shift;
+    my $score  = shift;
+    my $params = shift;
+
+    for ( 1 .. 5 ) {
+        $score -= 2 if $params->{"hint$_"};
+    }
+
+    return $score;
 }
 
 1;
