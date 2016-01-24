@@ -20,6 +20,13 @@
           </div>
         </div>
       </fieldset>
+
+      <!-- ヒント閲覧用パラメーター -->
+      <input type="hidden" name="hint1" value="0">
+      <input type="hidden" name="hint2" value="0">
+      <input type="hidden" name="hint3" value="0">
+      <input type="hidden" name="hint4" value="0">
+      <input type="hidden" name="hint5" value="0">
     </form>
 </div>
 : }

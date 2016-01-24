@@ -1,44 +1,31 @@
   <div class="container">
     <ul class="nav nav-tabs">
-      <li class=""><a href="#hint-1" data-toggle="tab" aria-expanded="false">ヒント１</a></li>
+      <li class="active"><a href="#whathint" data-toggle="tab">ヒント機能とは？</a></li>
+      <li id="hintbox-1"><a href="#hint-1" data-toggle="tab" aria-expanded="false">ヒント１</a></li>
+      <li id="hintbox-2"><a href="#hint-2" data-toggle="tab" aria-expanded="false">ヒント２</a></li>
+      <li id="hintbox-3"><a href="#hint-3" data-toggle="tab" aria-expanded="false">ヒント３</a></li>
+      <li id="hintbox-4"><a href="#hint-4" data-toggle="tab" aria-expanded="false">ヒント４</a></li>
+      <li id="hintbox-5"><a href="#hint-5" data-toggle="tab" aria-expanded="false">ヒント５</a></li>
     </ul>
     <div id="myTabContent" class="tab-content">
+      <div class="tab-pane fade active in" id="whathint">
+        <p>
+        <br>ヒントを一つ開くたびに２点づつ減点になるぞ！
+        ヒントは全部で５つまでだ！
+        </p>
+      </div>
       <div class="tab-pane fade" id="hint-1">
         <p><br><: $hint1 :></p>
       </div>
-    </div>
-
-    <ul class="nav nav-tabs">
-      <li class=""><a href="#hint-2" data-toggle="tab" aria-expanded="false">ヒント２</a></li>
-    </ul>
-    <div id="myTabContent" class="tab-content">
       <div class="tab-pane fade" id="hint-2">
         <p><br><: $hint2 :></p>
       </div>
-    </div>
-
-    <ul class="nav nav-tabs">
-      <li class=""><a href="#hint-3" data-toggle="tab" aria-expanded="false">ヒント３</a></li>
-    </ul>
-    <div id="myTabContent" class="tab-content">
       <div class="tab-pane fade" id="hint-3">
         <p><br><: $hint3 :></p>
       </div>
-    </div>
-
-    <ul class="nav nav-tabs">
-      <li class=""><a href="#hint-4" data-toggle="tab" aria-expanded="false">ヒント４</a></li>
-    </ul>
-    <div id="myTabContent" class="tab-content">
       <div class="tab-pane fade" id="hint-4">
         <p><br><: $hint4 :></p>
       </div>
-    </div>
-
-    <ul class="nav nav-tabs">
-      <li class=""><a href="#hint-5" data-toggle="tab" aria-expanded="false">ヒント５</a></li>
-    </ul>
-    <div id="myTabContent" class="tab-content">
       <div class="tab-pane fade" id="hint-5">
         <p><br><: $hint5 :></p>
       </div>
