@@ -57,4 +57,32 @@
     updateURL: false, // URLを[#〜]に変更したくない
   });
   </script>
+  <!-- ヒント機能 -->
+  <script>
+  // ヒントを隠しておく
+  $('#hintbox-2').hide();
+  $('#hintbox-3').hide();
+  $('#hintbox-4').hide();
+  $('#hintbox-5').hide();
+  // クリック毎に表示
+  $('#hintbox-1').click(function(){
+    $('[name=hint1]').val(1);
+      $('#hintbox-2').show();
+  });
+  $('#hintbox-2').click(function(){
+    $('[name=hint2]').val(1);
+      $('#hintbox-3').show();
+  });
+  $('#hintbox-3').click(function(){
+    $('[name=hint3]').val(1);
+      $('#hintbox-4').show();
+  });
+  $('#hintbox-4').click(function(){
+    $('[name=hint4]').val(1);
+      $('#hintbox-5').show();
+  });
+  $('#hintbox-5').click(function(){
+    $('[name=hint5]').val(1);
+  });
+  </script>
 : }
