@@ -3,6 +3,6 @@
 : around body -> {
 : include cracking::form
 <div class="container">
-  <a href="/questions/<: $question_id :>" class="btn btn-default btn-lg btn-block">第<: $question_id :>問へ戻る</a>
+  <a href="/questions/<: $question_id :>" class="btn btn-default btn-lg btn-block">第&nbsp;<: $question_id :>&nbsp;問へ戻る</a>
 </div>
 : }
