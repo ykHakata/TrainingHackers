@@ -84,6 +84,7 @@ sub _calcu_score {
     my $params = shift;
 
     for ( 1 .. 5 ) {
+        last if $score < 2;
         $score -= 2 if $params->{"hint$_"};
     }
 
