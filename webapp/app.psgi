@@ -25,7 +25,7 @@ $app->route('/scores', {controller => 'TrainingHackers::Controller::Scores', act
 $app->route('/errors', {controller => 'TrainingHackers::Controller::Errors', action => 'index'});
 $app->route('/initialize', {controller => 'TrainingHackers::Controller::Initializers', action => 'index'});
 $app->route('/cracking', {controller => 'TrainingHackers::Controller::PasswordCracking', action => 'index', id => 'hacker', password => 'hacker'});
-$app->route('/cracking_from_list', {controller => 'TrainingHackers::Controller::PasswordCrackingFromList', action => 'index', id => 'hiramatsu', password => 'a'});
+$app->route('/cracking_from_list', {controller => 'TrainingHackers::Controller::PasswordCrackingFromList', action => 'index', id => 'Barton', password => 'nRoyhQNv'});
 $app->route('/exploits', {controller => 'TrainingHackers::Controller::Exploits', action => 'index'});
 $app->route('/rankings', {controller => 'TrainingHackers::Controller::Rankings', action => 'index'});
 
