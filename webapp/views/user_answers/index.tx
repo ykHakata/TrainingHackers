@@ -1,0 +1,21 @@
+
+: cascade layout::base
+
+: around body -> {
+
+<h1>解答一覧</h1>
+
+<div class="jumbotron">
+  : for $answers -> $answer {
+  <div class="row">
+    <span class="col-lg-5">
+      <a href="/questions/<: $~answer.count :>">問<: $~answer.count :>問</a>
+    </span>
+    <span class="col-lg-5">
+      <a href="/questions/<: $~answer.count :>"><: $answer.user_answer :></a>
+    </span>
+  </div>
+  : }
+</div>
+
+: }
