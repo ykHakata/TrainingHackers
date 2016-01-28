@@ -6,7 +6,8 @@
         : } else if $question_id == 5 {
         <img src="/static/images/picture.jpeg" class="btn btn-primary btn-lg btn-block" style="transform: scale(0.7, 0.7) rotate(90deg);">
         : } else if $question_id == 6 {
-        <a href="/static/bin/WindowsFormsApplication.exe" class="btn btn-primary btn-lg btn-block">実行ファイルをダウンロード<br>(右クリックで保存)</a>
+        <a href="/static/bin/WindowsFormsApplication.zip" class="btn btn-primary btn-lg btn-block">実行ファイル(Windows用)をダウンロード<br>(右クリックで保存)</a>
+        <a href="/static/bin/Training.zip" class="btn btn-primary btn-lg btn-block">実行ファイルをダウンロード(Mac用)<br>(右クリックで保存)</a>
         : }
       </fieldset>
     </div>
