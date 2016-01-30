@@ -119,10 +119,4 @@ sub _calcu_score {
     return $score;
 }
 
-sub hint {
-    my $self   = shift;
-    use Data::Dumper;
-    print STDERR Dumper($self->parameters);
-}
-
 1;
