@@ -22,7 +22,7 @@ sub index {
         $self->stash(error => 2);
         return $self->render('cracking_from_list/index.tx');
     }
-    if ($params->{id} eq $self->routes->{id} && ceasar($params->{password}) eq $self->routes->{password}) {
+    if ($params->{id} eq $self->routes->{fileid} && $params->{password} eq $self->routes->{password}) {
         $self->stash(success => 1, password => $params->{password});
         $self->session->data->{user_answer} = $params->{password};
         return $self->render('cracking_from_list/index.tx');
