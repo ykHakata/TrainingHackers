@@ -92,9 +92,12 @@ sub hint {
     };
 
     if ($answer) {
+        $update_params->{user_answer} = $answer->{user_answer};
         $self->model('Answer')->update($update_params,$hint_type);
     }
     else {
+        $update_params->{user_answer} = '';
+        $update_params->{score} = 0;
         $self->model('Answer')->create($update_params,$hint_type);
     }
     return $self->finalize;

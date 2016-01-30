@@ -3,49 +3,8 @@
 
 : around body -> {
   : include inc::questions::issue
-  <div class="container">
-    <form action="/answers/<: $question_id :>" method="POST" class="form-horizontal well">
-      <fieldset>
-        <legend><span class="glyphicon glyphicon-pencil"></span>&emsp;解答を入力</legend>
-        :if $error == 1 {
-        <p class="text-warning">解答が入力されていません。</p>
-        : }
-        <div class="form-group">
-          <label class="col-lg-2 control-label">選択しよう！</label>
-          <div class="col-lg-10">
-            <div class="row">
-              <div class="radio col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <label>
-                  <input type="radio" name="user_answer" id="optionsRadios1" value="1" checked=""> 1: 孫 正義
-                </label>
-              </div>
-              <div class="radio col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <label>
-                  <input type="radio" name="user_answer" id="optionsRadios2" value="2"> 2: 孫 泰蔵
-                </label>
-              </div>
-              <div class="radio col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <label>
-                  <input type="radio" name="user_answer" id="optionsRadios3" value="3"> 3: 孫 悟飯
-                </label>
-              </div>
-              <div class="radio col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <label>
-                  <input type="radio" name="user_answer" id="optionsRadios4" value="4"> 4: 孫 悟空
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="col-lg-10 col-lg-offset-2">
-            <button type="submit" class="btn btn-primary" name="send" value="ボタン">送信</button>
-          </div>
-        </div>
-      </fieldset>
-
-    </form>
-  </div>
+  : include inc::questions::url
+  : include inc::questions::form
   : include inc::questions::level
   : include inc::questions::hint
 : }

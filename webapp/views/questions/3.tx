@@ -3,7 +3,6 @@
 
 : around body -> {
   : include inc::questions::issue
-  : include inc::questions::file
   : include inc::questions::url
   : include inc::questions::form
   : include inc::questions::level

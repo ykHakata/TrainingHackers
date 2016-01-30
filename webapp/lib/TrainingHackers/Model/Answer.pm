@@ -1,7 +1,7 @@
 package TrainingHackers::Model::Answer;
 use strict;
 use warnings;
-use parent qw(TrainingHackers::Model::Base); 
+use parent qw(TrainingHackers::Model::Base);
 use DBIx::Sunny;
 
 sub create {
@@ -11,14 +11,14 @@ sub create {
     my $set_hint_value;
     if ($hint_type) {
         $set_hint_type = qq{, $hint_type};
-        $set_hint_value = q{,1};
+        $set_hint_value = q{,'1'};
     }
     else {
         $set_hint_type = '';
         $set_hint_value = '';
     }
 
-    my $query = "INSERT INTO answers (question_id, user_id, user_answer, score, $hint_type) VALUES (?,?,?,?$set_hint_value)";
+    my $query = "INSERT INTO answers (question_id, user_id, user_answer, score $set_hint_type) VALUES (?,?,?,?$set_hint_value)";
     my $question_id = $params->{question_id};
     my $user_answer = $params->{user_answer};
     my $user_id = $params->{user_id};

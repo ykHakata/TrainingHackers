@@ -4,9 +4,9 @@
 : around body -> {
   <div class="container">
     <div class="jumbotron">
-    <h2>[総合ランキング]</h2>
+    <h2>[&nbsp;総合ランキング&nbsp;]</h2>
     : for $rankings -> $ranking {
-    <h2>第<: $~ranking.count :>位 [ <: $ranking.username :> さん ]</h2>
+    <h2>第&nbsp;<: $~ranking.count :>&nbsp;位 [ <: $ranking.username :> さん ]</h2>
       <div class="panel panel-danger">
         <div class="panel-heading">
           <h3 class="panel-title">現在の得点</h3>
