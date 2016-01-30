@@ -20,12 +20,13 @@ $app->route('/questions/*', {controller => 'TrainingHackers::Controller::Questio
 $app->route('/questions', {controller => 'TrainingHackers::Controller::Questions', action => 'index'});
 $app->route('/sessions', {controller => 'TrainingHackers::Controller::Sessions', action => 'index'});
 $app->route('/sessions/logout', {controller => 'TrainingHackers::Controller::Sessions', action => 'logout'});
+$app->route('/answers/hint', {controller => 'TrainingHackers::Controller::Answers', action => 'hint'});
 $app->route('/answers/*', {controller => 'TrainingHackers::Controller::Answers', action => 'index'});
 $app->route('/scores', {controller => 'TrainingHackers::Controller::Scores', action => 'index'});
 $app->route('/errors', {controller => 'TrainingHackers::Controller::Errors', action => 'index'});
 $app->route('/initialize', {controller => 'TrainingHackers::Controller::Initializers', action => 'index'});
 $app->route('/cracking', {controller => 'TrainingHackers::Controller::PasswordCracking', action => 'index', id => 'hacker', password => 'wATFyXV66LYHsCsoMDCeQLMfmGzU3A4C'});
-$app->route('/cracking_from_list', {controller => 'TrainingHackers::Controller::PasswordCrackingFromList', action => 'index', id => 'Barton', password => 'nRoyhQNv'});
+$app->route('/cracking_from_list', {controller => 'TrainingHackers::Controller::PasswordCrackingFromList', action => 'index', fileid => 'Barton', password => 'nRoyhQNv'});
 $app->route('/exploits', {controller => 'TrainingHackers::Controller::Exploits', action => 'index'});
 $app->route('/rankings', {controller => 'TrainingHackers::Controller::Rankings', action => 'index'});
 $app->route('/user_answers', {controller => 'TrainingHackers::Controller::UserAnswers', action => 'index'});
