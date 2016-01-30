@@ -45,7 +45,7 @@ sub index {
     # hint パラメーターから得点を計算後レコード更新するので
     # answer テーブルの hint カラムは使用していない
     if ($score) {
-        $score = $self->_calcu_score( $score, $params, );
+        $score = $self->_calcu_score( $score, $answer, );
     }
 
     my $update_params = +{
@@ -70,6 +70,34 @@ sub index {
         next_q_number => $n + 1,
     );
     return $self->render("answers/$n.tx");
+}
+
+sub hint {
+    my $self      = shift;
+    my $params    = $self->parameters;
+    my $hint_type = $params->{value};
+    my $session   = $self->session->data;
+
+    # 存在確認
+    my $answer = $self->model('Answer')->search(
+        +{  user_id     => $self->session->data->{user}->{id},
+            question_id => $self->session->data->{question}->{id}
+        },
+    );
+
+    my $update_params = +{
+        user_id     => $self->session->data->{user}->{id},
+        question_id => $self->session->data->{question}->{id},
+        $hint_type  => 1,
+    };
+
+    if ($answer) {
+        $self->model('Answer')->update($update_params,$hint_type);
+    }
+    else {
+        $self->model('Answer')->create($update_params,$hint_type);
+    }
+    return $self->finalize;
 }
 
 =head2 _calcu_score

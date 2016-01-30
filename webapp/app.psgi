@@ -20,6 +20,7 @@ $app->route('/questions/*', {controller => 'TrainingHackers::Controller::Questio
 $app->route('/questions', {controller => 'TrainingHackers::Controller::Questions', action => 'index'});
 $app->route('/sessions', {controller => 'TrainingHackers::Controller::Sessions', action => 'index'});
 $app->route('/sessions/logout', {controller => 'TrainingHackers::Controller::Sessions', action => 'logout'});
+$app->route('/answers/hint', {controller => 'TrainingHackers::Controller::Answers', action => 'hint'});
 $app->route('/answers/*', {controller => 'TrainingHackers::Controller::Answers', action => 'index'});
 $app->route('/scores', {controller => 'TrainingHackers::Controller::Scores', action => 'index'});
 $app->route('/errors', {controller => 'TrainingHackers::Controller::Errors', action => 'index'});
