@@ -38,7 +38,12 @@ sub index {
         $ok = 1;
         $score = +$entry->{score};
     }
-
+    my $n = $self->session->data->{question}->{id};
+    if (($n == 7) && $params->{user_answer} =~ /<[a-zA-Z]+/) {
+        $ok = 1;
+        $score = +$entry->{score};
+    }
+        
     my $answer = $self->model('Answer')->search({
         user_id => $self->session->data->{user}->{id},
         question_id => $self->session->data->{question}->{id}
