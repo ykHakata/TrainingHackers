@@ -45,7 +45,7 @@ SQL
     my $question_id = $params->{question_id};
     my $user_answer = $params->{user_answer};
     my $user_id = $params->{user_id};
-    my $score = $params->{score};
+    my $score = $params->{score} || 0;
     $self->db->query($query, $question_id, $user_id, $user_answer, $score, $user_id, $question_id);
 }
 
