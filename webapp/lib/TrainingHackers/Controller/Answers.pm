@@ -33,7 +33,9 @@ sub index {
 
     $self->session->data->{question} = $entry;
     my $score = 0;
+    my $ok = 0;
     if ($params->{user_answer} eq $entry->{answer}) {
+        $ok = 1;
         $score = +$entry->{score};
     }
 
@@ -68,6 +70,7 @@ sub index {
         user_answer   => $params->{user_answer},
         q_number      => $n,
         next_q_number => $n + 1,
+        ok => $ok
     );
     return $self->render("answers/$n.tx");
 }

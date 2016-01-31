@@ -6,6 +6,11 @@
       </div>
       <div class="panel-body">
         解答 : <: $user_answer:><br>
+        : if $ok == 1 {
+            正解だ！
+        : } else {
+            間違いだ！
+        : }
       </div>
     </div>
     : if $next_q_number == 11 {
