@@ -26,7 +26,7 @@ sub index {
 }
 
 sub sort_func {
-    return ($b->{score} cmp $a->{score});
+    return ($b->{score} <=> $a->{score});
 }
 
 sub score {
