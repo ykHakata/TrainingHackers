@@ -8,6 +8,32 @@
         : } else if $question_id == 9 {
         <a href="/static/bin/WindowsFormsApplication.zip" class="btn btn-primary btn-lg btn-block">実行ファイル(Windows用)をダウンロード<br>(右クリックで保存)</a>
         <a href="/static/bin/Training.zip" class="btn btn-primary btn-lg btn-block">実行ファイルをダウンロード(Mac用)<br>(右クリックで保存)</a>
+        : } else if $question_id == 14 {
+        <div>
+<pre>
+use strict;
+use warnings;
+
+# データ構造を定義
+my $questions = [
+    +{  id   => 1,
+        name => 'black',
+    },
+    +{  id   => 2,
+        name => 'white',
+    },
+    +{  id   => 3,
+        name => 'hacker',
+    },
+];
+
+# id が 3 のデータのみを抽出
+my $answers = [ **** { $_->{id} eq 3 } @{$questions} ];
+
+# 抽出したデータを画面に出力
+print $answers->[0]->{name}, "\n";
+</pre>
+        </div>
         : }
       </fieldset>
     </div>

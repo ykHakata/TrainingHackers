@@ -41,8 +41,8 @@ sub show {
     $self->session->data->{error} = 0;
 
     if ($self->session->data->{user_answer}) {
-        $self->stash(q => {user_answer => $self->session->data->{user_answer}}); 
-        $self->session->data->{user_answer} = undef; 
+        $self->stash(q => {user_answer => $self->session->data->{user_answer}});
+        $self->session->data->{user_answer} = undef;
     }
     $self->session->data->{question} = $question;
     $self->render("questions/$n.tx");
