@@ -8,7 +8,7 @@
         : } else if $question_id == 9 {
         <a href="/static/bin/WindowsFormsApplication.zip" class="btn btn-primary btn-lg btn-block">実行ファイル(Windows用)をダウンロード<br>(右クリックで保存)</a>
         <a href="/static/bin/Training.zip" class="btn btn-primary btn-lg btn-block">実行ファイルをダウンロード(Mac用)<br>(右クリックで保存)</a>
-        : } else if $question_id == 14 {
+        : } else if $question_id == 15 {
         <div>
 <pre>
 use strict;
