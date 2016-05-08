@@ -13,7 +13,7 @@
         : }
       </div>
     </div>
-    : if $next_q_number == 11 {
+    : if $next_q_number == 16 {
         <a href="/questions/<: $next_q_number:>" class="btn btn-default btn-lg btn-block">結果へ</a>
     : } else {
         <a href="/questions/<: $next_q_number:>" class="btn btn-default btn-lg btn-block">第 <: $next_q_number:> 問へ</a>
