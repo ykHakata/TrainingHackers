@@ -8,6 +8,8 @@
         : } else if $question_id == 9 {
         <a href="/static/bin/WindowsFormsApplication.zip" class="btn btn-primary btn-lg btn-block">実行ファイル(Windows用)をダウンロード<br>(右クリックで保存)</a>
         <a href="/static/bin/Training.zip" class="btn btn-primary btn-lg btn-block">実行ファイルをダウンロード(Mac用)<br>(右クリックで保存)</a>
+        : } else if $question_id == 16 {
+        <a href="/static/bin/perl" class="btn btn-primary btn-lg btn-block">実行ファイルをダウンロード<br>(右クリックで保存)</a>
         : } else if $question_id == 15 {
         <div>
 <pre>
@@ -32,6 +34,31 @@ my $answers = [ **** { $_->{id} eq 3 } @{$questions} ];
 
 # 抽出したデータを画面に出力
 print $answers->[0]->{name}, "\n";
+</pre>
+        </div>
+        : } else if $question_id == 17 {
+        <div>
+<pre>
+# $req->param()はユーザーからの入力値を取得するものとする
+my $uid = $req->param('uid');
+my $password = $req->param('password');
+my $dbh = DBI->connect(...);
+my $query = "SELECT * FROM user WHERE uid = '$uid' AND password = '$password'";
+my $sth = $dbh->prepare($query);
+$sth->execute();
+</pre>
+        </div>
+        : } else if $question_id == 18 {
+        <div>
+<pre>
+# $req->param()はユーザーからの入力値を取得するものとする
+my $cmd = $req->param('cmd');
+print system($cmd);
+</pre>
+        : } else if $question_id == 19 {
+        <div>
+<pre>
+111100110100110101010010101001010100101010010011010101001010000010111101111011101110111011101110111011101010111010110101100101110110110101101101101111101110110100110110111011011101100111010100010100010100101001010011011010101001010011010010010001001010010010010010011001100101011010010101011011011010101011010110101010001010110101010110101010010101010101011010101001010101111010101101011010010101010110101101011010100101001010111110101011010100110101101000101001101001010010
 </pre>
         </div>
         : }
