@@ -10,6 +10,11 @@
         <a href="/static/bin/Training.zip" class="btn btn-primary btn-lg btn-block">実行ファイルをダウンロード(Mac用)<br>(右クリックで保存)</a>
         : } else if $question_id == 16 {
         <a href="/static/bin/perl" class="btn btn-primary btn-lg btn-block">実行ファイルをダウンロード<br>(右クリックで保存)</a>
+        : } else if $question_id == 20 {
+        <img src="/static/images/HackersLab1.jpeg" width=400 height=300>
+        <img src="/static/images/HackersLab2.jpeg" width=400 height=300>
+        : } else if $question_id == 25 {
+        <a href="/static/bin/a.out" class="btn btn-primary btn-lg btn-block">実行ファイルをダウンロード<br>(右クリックで保存)</a>
         : } else if $question_id == 15 {
         <div>
 <pre>
@@ -59,6 +64,15 @@ print system($cmd);
         <div>
 <pre>
 111100110100110101010010101001010100101010010011010101001010000010111101111011101110111011101110111011101010111010110101100101110110110101101101101111101110110100110110111011011101100111010100010100010100101001010011011010101001010011010010010001001010010010010010011001100101011010010101011011011010101011010110101010001010110101010110101010010101010101011010101001010101111010101101011010010101010110101101011010100101001010111110101011010100110101101000101001101001010010
+</pre>
+        </div>
+        : } else if $question_id == 22 {
+        <div>
+<pre>
+&lt;script type="text/javascript"&gt;
+var ip = '&lt;?php echo $_SERVER['***********']; ?&gt;';
+$('body').html(ip);
+&lt;/script&gt;
 </pre>
         </div>
         : }

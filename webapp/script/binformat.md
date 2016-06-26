@@ -107,3 +107,9 @@ print system($cmd);
 ```
 print system("ls", "-ltr");
 ```
+
+---
+
+### 表示可能文字列の表示
+
+* stringsコマンド
