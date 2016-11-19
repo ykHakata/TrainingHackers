@@ -8,6 +8,8 @@
         : } else if $question_id == 9 {
         <a href="/static/bin/WindowsFormsApplication.zip" class="btn btn-primary btn-lg btn-block">実行ファイル(Windows用)をダウンロード<br>(右クリックで保存)</a>
         <a href="/static/bin/Training.zip" class="btn btn-primary btn-lg btn-block">実行ファイルをダウンロード(Mac用)<br>(右クリックで保存)</a>
+        : } else if $question_id == 35 {
+        <a href="/static/bin/hackerz_Level4-1.png" class="btn btn-primary btn-lg btn-block">画像データをダウンロード<br>(右クリックで保存)</a>
         : } else if $question_id == 16 {
         <a href="/static/bin/perl" class="btn btn-primary btn-lg btn-block">実行ファイルをダウンロード<br>(右クリックで保存)</a>
         : } else if $question_id == 20 {
