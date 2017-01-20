@@ -10,6 +10,14 @@
         <a href="/static/bin/Training.zip" class="btn btn-primary btn-lg btn-block">実行ファイルをダウンロード(Mac用)<br>(右クリックで保存)</a>
         : } else if $question_id == 35 {
         <a href="/static/bin/hackerz_Level4-1.png" class="btn btn-primary btn-lg btn-block">画像データをダウンロード<br>(右クリックで保存)</a>
+        : } else if $question_id == 38 {
+        <a href="/static/images/HLH_20170122_01.jpg" class="btn btn-primary btn-lg btn-block">画像データをダウンロード<br>(右クリックで保存)</a>
+        : } else if $question_id == 39 {
+        <a href="/static/images/HLH_20170122_02.txt" class="btn btn-primary btn-lg btn-block">データをダウンロード<br>(右クリックで保存)</a>
+        : } else if $question_id == 44 {
+        <a href="/static/images/219_94_192_72_top.pcapng" class="btn btn-primary btn-lg btn-block">データをダウンロード<br>(右クリックで保存)</a>
+        : } else if $question_id == 45 {
+        <a href="/static/images/219_94_192_72_top_2.pcapng" class="btn btn-primary btn-lg btn-block">データをダウンロード<br>(右クリックで保存)</a>
         : } else if $question_id == 16 {
         <a href="/static/bin/perl" class="btn btn-primary btn-lg btn-block">実行ファイルをダウンロード<br>(右クリックで保存)</a>
         : } else if $question_id == 20 {
