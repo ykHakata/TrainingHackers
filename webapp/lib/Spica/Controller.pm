@@ -123,20 +123,21 @@ sub render {
     my $self = shift;
 
     my $body;
-    if ($_[0] eq 'json') {
-        load "JSON";
-        return JSON::encode_json($_[1]);
-    }
 
     $self->emit(before_render => $self, @_);
 
     if ($_[0] eq 'text') {
         $body = $self->renderer->render_string($_[1]);
+        $self->res->body($self->encode_html($body));
+    } elsif  ($_[0] eq 'json') {
+        load "JSON";
+        $body = JSON::encode_json($_[1]);
+        $self->res->body($body);
     } else {
         $body = $self->renderer->render(shift, shift||$self->stash);
+        $self->res->body($self->encode_html($body));
     }
-    $self->emit(after_render => $self, $body);
-    $self->res->body($self->encode_html($body));
+    $self->emit(after_render => $self, \$body);
     return $self->finalize;
 }
 

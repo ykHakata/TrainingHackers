@@ -1,0 +1,12 @@
+
+.jumbotron {
+  border-radius: 10px;        /* CSS3草案 */  
+  -webkit-border-radius: 10px;    /* Safari,Google Chrome用 */  
+  -moz-border-radius: 10px;   /* Firefox用 */ 
+  padding: 10px;
+  font-size: 16px;
+}
+
+.row {
+  margin-top: 20px;
+}

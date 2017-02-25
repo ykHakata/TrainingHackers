@@ -20,6 +20,12 @@ create table questions (
     `hint3` TEXT BINARY,
     `hint4` TEXT BINARY,
     `hint5` TEXT BINARY,
+    `type` VARCHAR(30) BINARY NOT NULL,
+    `addfile` VARCHAR(255) BINARY NOT NULL DEFAULT '',
+    `option1` VARCHAR(128) BINARY NOT NULL DEFAULT '',
+    `option2` VARCHAR(128) BINARY NOT NULL DEFAULT '',
+    `option3` VARCHAR(128) BINARY NOT NULL DEFAULT '',
+    `option4` VARCHAR(128) BINARY NOT NULL DEFAULT '',
     `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 

@@ -1,0 +1,240 @@
+
+: cascade layout::base
+
+: around javascript -> {
+  <link rel="stylesheet" type="text/css" href="/static/css/main.css" media="screen" />
+  <script type="text/javascript" src="/static/js/jsrender.js"></script>
+  <script id="questions" type="text/x-jsrender">
+  {{for questions}}
+    <div class="jumbotron">
+      <div class="row">
+        <span class="col col-md-2">ID</span>
+        <span class="col col-md-8">
+          {{:id}}
+        </span>
+      </div>
+      <div class="row">
+        <span class="col col-md-2">問題</span>
+        <span class="col col-md-8">
+          {{:question}}
+        </span>
+      </div>
+      <div class="row">
+        <span class="col col-md-2">レベル</span>
+        <span class="col col-md-8">
+          {{:level}}
+        </span>
+      </div>
+      <div class="row">
+        <span class="col col-md-2">問題区分</span>
+        {{if type == '1'}}
+          <span class="col col-md-8">記述式</span>
+        {{else type == '2'}}
+          <span class="col col-md-8">選択式</span>
+        {{/if}}
+      </div>
+      <div class="row">
+        <span class="col col-md-2">選択肢1</span>
+        <span class="col col-md-8">
+          {{:option1}}
+        </span>
+      </div>
+      <div class="row">
+        <span class="col col-md-2">選択肢2</span>
+        <span class="col col-md-8">
+          {{:option2}}
+        </span>
+      </div>
+      <div class="row">
+        <span class="col col-md-2">選択肢3</span>
+        <span class="col col-md-8">
+          {{:option3}}
+        </span>
+      </div>
+      <div class="row">
+        <span class="col col-md-2">選択肢4</span>
+        <span class="col col-md-8">
+          {{:option4}}
+        </span>
+      </div>
+      <div class="row">
+        <span class="col col-md-2">回答</span>
+        <span class="col col-md-8">
+          {{:answer}}
+        </span>
+      </div>
+      <div class="row">
+        <span class="col col-md-2">添付ファイル</span>
+        <span class="col col-md-8">
+          {{:addfile}}
+        </span>
+      </div>
+      <div class="row">
+        <span class="col col-md-2">スコア</span>
+        <span class="col col-md-8">
+          {{:score}}
+        </span>
+      </div>
+      <div class="row">
+        <span class="col col-md-2">ヒント1</span>
+        <span class="col col-md-8">
+          {{:hint1}}
+        </span>
+      </div>
+      <div class="row">
+        <span class="col col-md-2">ヒント2</span>
+        <span class="col col-md-8">
+          {{:hint2}}
+        </span>
+      </div>
+      <div class="row">
+        <span class="col col-md-2">ヒント3</span>
+        <span class="col col-md-8">
+          {{:hint3}}
+        </span>
+      </div>
+      <div class="row">
+        <span class="col col-md-2">ヒント4</span>
+        <span class="col col-md-8">
+          {{:hint4}}
+        </span>
+      </div>
+      <div class="row">
+        <span class="col col-md-2">ヒント5</span>
+        <span class="col col-md-8">
+          {{:hint5}}
+        </span>
+      </div>
+      <div class="row">
+        <span class="col col-md-3">
+          <button id="edit-question-btn" data-button="{{:id}}" onclick="$question.edit(this);return false;" class="btn btn-primary">
+           編集
+          </button>
+        </span>
+      </div>
+    </div>
+  {{/for}}
+  </script>
+
+  <script type="text/javascript" src="/static/js/question.js"></script>
+  <script type="text/javascript" src="/static/js/main.js"></script>
+: }
+
+: around body -> {
+
+  <div class="container">
+    <div class="jumbotron">
+      <button id="add-new-question-btn" class="btn btn-primary">
+        問題追加
+      </button>
+      <button id="delete-all-question-btn" class="btn btn-primary">
+        問題を全て削除
+      </button>
+      <button id="delete-all-answer-btn" class="btn btn-primary">
+        回答を全て削除
+      </button>
+    </div>
+    <div id="container">
+    </div>
+    <div class="modal" id="add-new-question-modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="modal-title">問題追加</h4>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="id">ID (問題追加の場合は入力しないでください。自動で採番します。)</label>
+              <div class="text-warning" id="id-label"></div>
+              <input type="text" name="id" class="form-control" id="id" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="question">問題 (改行はbrタグに変換されます)</label>
+              <div class="text-warning" id="question-label"></div>
+              <textarea rows="10" name="question" class="form-control" id="question" placeholder=""></textarea>
+            </div>
+            <div class="form-group">
+              <label for="level">レベル</label>
+              <div class="text-warning" id="level-label"></div>
+              <input type="text" name="level" class="form-control" id="level" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="type">問題区分</label>
+              <div class="text-warning" id="type-label"></div>
+              <div class="radio">
+                <label><input type="radio" name="type" id="type1" value="1" checked>記述式</label>
+                <label><input type="radio" name="type" id="type2" value="2">選択式</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="option1">選択肢1 (記述式を選択した場合は以下の1〜4は入力しないでください)</label>
+              <div class="text-warning" id="option1-label"></div>
+              <input type="text" name="option1" class="form-control" id="option1" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="option2">選択肢2</label>
+              <div class="text-warning" id="option2-label"></div>
+              <input type="text" name="option2" class="form-control" id="option2" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="option3">選択肢3</label>
+              <div class="text-warning" id="option3-label"></div>
+              <input type="text" name="option3" class="form-control" id="option3" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="option4">選択肢4</label>
+              <div class="text-warning" id="option4-label"></div>
+              <input type="text" name="option4" class="form-control" id="option4" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="answer">回答 (選択式を選択した場合は回答の番号1〜4を入力してください)</label>
+              <div class="text-warning" id="answer-label"></div>
+              <input type="text" name="answer" class="form-control" id="answer" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="addfile">添付ファイル名 (/static/images配下にこのファイルを置いて下さい)</label>
+              <div class="text-warning" id="addfile-label"></div>
+              <input type="text" name="addfile" class="form-control" id="addfile" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="score">スコア</label>
+              <div class="text-warning" id="score-label"></div>
+              <input type="text" name="score" class="form-control" id="score" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="hint1">ヒント1</label>
+              <div class="text-warning" id="hint1-label"></div>
+              <input type="text" name="hint1" class="form-control" id="hint1" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="hint2">ヒント2</label>
+              <div class="text-warning" id="hint2-label"></div>
+              <input type="text" name="hint2" class="form-control" id="hint2" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="hint3">ヒント3</label>
+              <div class="text-warning" id="hint3-label"></div>
+              <input type="text" name="hint3" class="form-control" id="hint3" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="hint4">ヒント4</label>
+              <div class="text-warning" id="hint4-label"></div>
+              <input type="text" name="hint4" class="form-control" id="hint4" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="hint5">ヒント5</label>
+              <div class="text-warning" id="hint5-label"></div>
+              <input type="text" name="hint5" class="form-control" id="hint5" placeholder="">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <a href="#" data-dismiss="modal" class="btn">閉じる</a>
+            <a href="#" id="add-question-btn" class="btn btn-primary" data-id>追加</a>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div>
+
+: }

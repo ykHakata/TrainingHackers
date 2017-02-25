@@ -30,6 +30,14 @@ $app->route('/cracking_from_list', {controller => 'TrainingHackers::Controller::
 $app->route('/exploits', {controller => 'TrainingHackers::Controller::Exploits', action => 'index'});
 $app->route('/rankings', {controller => 'TrainingHackers::Controller::Rankings', action => 'index'});
 $app->route('/user_answers', {controller => 'TrainingHackers::Controller::UserAnswers', action => 'index'});
+$app->route('/admin', {controller => 'TrainingHackers::Controller::Admin', action => 'index'});
+
+# API
+$app->route('/api/question/list', {controller => 'TrainingHackers::Controller::API::Question', action => 'list'});
+$app->route('/api/question/create', {controller => 'TrainingHackers::Controller::API::Question', action => 'create'});
+$app->route('/api/question/deleteall', {controller => 'TrainingHackers::Controller::API::Question', action => 'deleteall'});
+$app->route('/api/question/item', {controller => 'TrainingHackers::Controller::API::Question', action => 'item'});
+$app->route('/api/answer/deleteall', {controller => 'TrainingHackers::Controller::API::Answer', action => 'deleteall'});
 
 my $psgi_app = $app->psgi_app;
 
