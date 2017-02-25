@@ -8,5 +8,6 @@
 : block header -> {}
 : block body -> {}
 : block footer -> {}
+: block javascript -> {}
 </body>
 </html>
