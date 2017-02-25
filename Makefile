@@ -1,3 +1,3 @@
 .PHONY: plackup
 plackup:
-	plackup -L Shotgun
+	plackup -L Shotgun webapp/app.psgi
