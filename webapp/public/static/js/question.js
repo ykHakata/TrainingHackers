@@ -7,6 +7,7 @@ class Question {
     this.addQuestionBtnId = '#add-question-btn';
     this.deleteAllQuestionBtnId = '#delete-all-question-btn';
     this.deleteAllAnswerBtnId = '#delete-all-answer-btn';
+    this.deleteAllUserBtnId = '#delete-all-user-btn';
     this.editQuestionBtnId = '#edit-question-btn';
     this.idValId = 'input[name=id]';
     this.questionValId = 'textarea[name=question]';
@@ -17,6 +18,7 @@ class Question {
     this.answerValId = 'input[name=answer]';
     this.addfileValId = 'input[name=addfile]';
     this.typeValId = 'input[name=type]:checked';
+    this.typeId = 'input[name=type]';
     this.scoreValId = 'input[name=score]';
     this.hint1ValId = 'input[name=hint1]';
     this.hint2ValId = 'input[name=hint2]';
@@ -29,6 +31,7 @@ class Question {
     this.questionDeleteAllAPI = '/api/question/deleteall';
     this.questionItemAPI = '/api/question/item';
     this.answerDeleteAllAPI = '/api/answer/deleteall';
+    this.userDeleteAllAPI = '/api/user/deleteall';
   }
   addListener() {
     $(this.addNewQuestionBtnId).on('click', (e) => {
@@ -42,6 +45,9 @@ class Question {
     });
     $(this.deleteAllAnswerBtnId).on('click', (e) => {
       this.onClickDeleteAllAnswer(e);
+    });
+    $(this.deleteAllUserBtnId).on('click', (e) => {
+      this.onClickDeleteAllUser(e);
     });
   }
 
@@ -77,6 +83,27 @@ class Question {
 
     $.ajax({
       url: this.answerDeleteAllAPI,
+      type: 'POST',
+    }).then((data) => {
+      alert('削除しました');
+      this.load();
+    },
+    (data) => {
+      alert('エラーが発生しました');
+    });
+  }
+
+  onClickDeleteAllUser(e) {
+    e.preventDefault();
+    if (window.confirm('削除しますか?')) {
+      this.deleteAllUser();
+    }
+  }
+
+  deleteAllUser() {
+
+    $.ajax({
+      url: this.userDeleteAllAPI,
       type: 'POST',
     }).then((data) => {
       alert('削除しました');
@@ -148,7 +175,7 @@ class Question {
           $(this.option3ValId).val(value.option3);
           $(this.option4ValId).val(value.option4);
           $(this.addfileValId).val(value.addfile);
-          $(this.typeValId).val(value.type);
+          $(this.typeId).val([value.type]);
           $(this.scoreValId).val(value.score);
           $(this.hint1ValId).val(value.hint1);
           $(this.hint2ValId).val(value.hint2);

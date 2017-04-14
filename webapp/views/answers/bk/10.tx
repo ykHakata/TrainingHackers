@@ -1,6 +1,0 @@
-
-: cascade layout::base
-
-: around body -> {
-  : include inc::answers::answer
-: }

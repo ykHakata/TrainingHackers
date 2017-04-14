@@ -1,8 +1,16 @@
-
 : cascade layout::base
 
 : around body -> {
   : include inc::questions::issue
+
+  <div class="container">
+    <div class="form-horizontal well">
+      <fieldset>
+        <a href="/static/images/HLHQuiz_uki2waku2.txt" class="btn btn-primary btn-lg btn-block">ファイルをダウンロード<br></a>
+      </fieldset>
+    </div>
+  </div>
+
   : include inc::questions::form
   : include inc::questions::level
   : include inc::questions::hint

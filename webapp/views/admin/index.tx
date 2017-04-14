@@ -133,6 +133,9 @@
       <button id="delete-all-answer-btn" class="btn btn-primary">
         回答を全て削除
       </button>
+      <button id="delete-all-user-btn" class="btn btn-primary">
+        ユーザーを全て削除
+      </button>
     </div>
     <div id="container">
     </div>

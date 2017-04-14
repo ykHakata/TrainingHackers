@@ -38,6 +38,7 @@ $app->route('/api/question/create', {controller => 'TrainingHackers::Controller:
 $app->route('/api/question/deleteall', {controller => 'TrainingHackers::Controller::API::Question', action => 'deleteall'});
 $app->route('/api/question/item', {controller => 'TrainingHackers::Controller::API::Question', action => 'item'});
 $app->route('/api/answer/deleteall', {controller => 'TrainingHackers::Controller::API::Answer', action => 'deleteall'});
+$app->route('/api/user/deleteall', {controller => 'TrainingHackers::Controller::API::User', action => 'deleteall'});
 
 my $psgi_app = $app->psgi_app;
 
